@@ -9,21 +9,20 @@ tipo = input("Baixar:\n1-Playlsit\n2-Video\n3-Audio\n4-Exit\n")
 if tipo == "1":
     link = input("Insira a url da playlsit:")
 
-    yt = Playlist(link)
-
-    for video in yt.videos:
-        print(f"O download de {video} começou")
+    pl = Playlist(link)
+    print("O numero de videos é: %s" % len(pl.video_urls))
+    
+    for url in pl.video_urls:
+        video = YouTube(url,on_progress_callback=on_progress)
         video.streams.get_highest_resolution().download()
-        print(f"O download de {video} acabou")
-
-    print(f"O download de {link} acabou")
-
+        print(f"O download de {url} acabou")
+        
 """Video"""
 if tipo == "2":
     link = input("Insira a url do video:")
 
     """ 22 """
-    yt = YouTube(link)
+    yt=YouTube(link,on_progress_callback=on_progress)
 
     yt.streams.get_highest_resolution().download()
 
@@ -33,21 +32,12 @@ if tipo == "2":
 if tipo == "3":
     link = input("Insira a url do video => audio:")
 
-    """ 22 """
-    yt = YouTube(link)
+    yt=YouTube(link,on_progress_callback=on_progress)
 
     audio = yt.streams.filter(only_audio=True)[0]
     audio.download()
 
     print(f"O download de {link} acabou")
-    
-""" Teste de Barra de Progresso """  
-if tipo =="4":
-    link=input('enter url:')
-    yt=YouTube(link,on_progress_callback=on_progress)
-    videos=yt.streams.first()
-    videos.download()
-    print("(:")
-    
+   
 else:
     exit
