@@ -50,7 +50,7 @@ if tipo == "4":
         print("O download começou")
         yt=YouTube(linha,on_progress_callback=on_progress)
         yt.streams.get_highest_resolution().download()
-        print(f"Download de {link} acabou!")
+        print(f"Download de {linha} acabou!")
         
     arq.close()
 
