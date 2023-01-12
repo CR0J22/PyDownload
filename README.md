@@ -23,6 +23,7 @@ $ pip3 install pytube
 - [x] Download de playlist na melhor qualidade disponivel
 - [x] Download de videos na melhor qualidade disponivel
 - [x] Seleção de tipo de download
+- [x] Download via arquivo
 - [ ] Download de videos especificos de uma playlis
 - [ ] Formatos de arquivos diferentes
 - [ ] Path variavel para doynload
