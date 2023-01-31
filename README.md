@@ -3,7 +3,7 @@ Programa para download de videos e playslist do Youtube
 <h4 align="center"> 
 	🚧 Em evolução ...  🚧
 </h4>
-<img src="https://drive.google.com/file/d/1vM7mAcF-AvY2ZZHIwEu4yZgyij4fKK1Q/view?usp=drivesdk" alt="PydownloadBanner">
+<img src="https://github.com/CR0J22/PyDownload/blob/main/assets/bannerpydown.jpeg" alt="PydownloadBanner">
 
 <h3>###Como usar?<h3>
 <h4>Antes de mais nada <h4>
