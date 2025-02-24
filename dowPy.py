@@ -9,7 +9,8 @@ print("|  __/| |_| | |_| | (_) \ V  V /| | | | | (_) | (_| | (_| |")
 print("|_|    \__, |____/ \___/ \_/\_/ |_| |_|_|\___/ \__,_|\__,_|")
 print("       |___/                                               ")
 
-tipo = input("Você deseja Baixar:\n1-Playlsit\n2-Video\n3-Audio\n4-Via arquivo\n5-Sair\n")
+tipo = input("Você deseja Baixar:\n1-Playlist\n2-Video\n3-Audio\n4-Playlist (Apenas Áudio)\n5-Via arquivo\n6-Sair\n")
+
 
 """Playlist"""
 if tipo == "1":
@@ -44,9 +45,25 @@ if tipo == "3":
     audio.download()
 
     print(f"O download de {link} acabou")
+
+""" Playlist (Apenas Áudio) """
+if tipo == "4":
+    link = input("Insira a URL da playlist: ")
+    pl = Playlist(link)
+    print("O número de vídeos é: %s" % len(pl.video_urls))
+    
+    for url in pl.video_urls:
+      
+        yt=YouTube(url,on_progress_callback=on_progress)
+        audio = yt.streams.filter(only_audio=True)[0]
+        audio.download()
+        print(f"O download de {url} acabou")
+
+      
+       
     
 """Via arquivo"""
-if tipo == "4":
+if tipo == "5":
     
     arq = open('vid.txt', 'r')
     texto = arq.readlines()
